@@ -1,65 +1,154 @@
 import Image from "next/image";
+import { FloatingAssistant } from "@/components/floating-assistant";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { ProjectCard } from "@/components/project-card";
+import { Services } from "@/components/services";
+
+const capabilities = [
+  {
+    title: "Frontend Engineering",
+    description:
+      "React, Next.js, TypeScript, Tailwind CSS, WebGL/Three.js integrations, Framer Motion.",
+  },
+  {
+    title: "Backend Systems",
+    description:
+      "Python, Node.js, PostgreSQL, Redis, RESTful API Design, GraphQL.",
+  },
+  {
+    title: "Infrastructure & DevOps",
+    description:
+      "AWS, Vercel, Docker, CI/CD Pipelines, Infrastructure as Code.",
+  },
+  {
+    title: "Design Systems",
+    description:
+      "Figma, Component Architecture, Accessibility Standards, Micro-interactions.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <Header />
+      <main>
+        <section className="hero shell">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <span className="eyebrow">WEB DEVELOPER</span>
+              <h1>
+                Shape the idea until
+                <br />
+                it feels inevitable.
+              </h1>
+              <div className="hero-principles">
+                <p>Presence is built in the details.</p>
+                <p>Make the first look unforgettable.</p>
+                <p>Great work feels obvious when it arrives.</p>
+              </div>
+              <div className="button-row">
+                <a className="button button-primary" href="#work">
+                  VIEW WORK
+                </a>
+                <a className="button button-secondary" href="#contact">
+                  START A CONVERSATION
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-media glass-card">
+              <Image
+                src="/images/hero-product.jpg"
+                alt="A premium, luxury editorial-style digital product visual."
+                fill
+                priority
+                sizes="(max-width: 767px) calc(100vw - 48px), 33vw"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="section shell" id="work">
+          <h2 className="section-label">
+            <span aria-hidden="true" />
+            Selected Work
+          </h2>
+          <div className="projects-grid">
+            <ProjectCard
+              className="project-featured"
+              image="/images/applyflow.jpg"
+              alt="ApplyFlow Case Study"
+              category="APPLICATION WORKFLOW"
+              title="Job Post Analyser + Application Manager"
+              showArrow
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <ProjectCard
+              image="/images/transcription-tool.jpg"
+              alt="Video Transcription Tool"
+              category="SYSTEM AUTOMATION"
+              title="Video Transcription Workflow"
+            />
+            <ProjectCard
+              image="/images/portfolio-ui.jpg"
+              alt="Portfolio UI Build"
+              category="DOCUMENT GENERATION"
+              title="Resume Builder"
+            />
+          </div>
+        </section>
+
+        <Services />
+
+        <section className="section shell">
+          <div className="capabilities-grid">
+            <div>
+              <h2 className="section-heading sticky-heading">Capabilities</h2>
+            </div>
+            <div className="capability-list">
+              {capabilities.map((capability) => (
+                <div className="capability-row" key={capability.title}>
+                  <div className="eyebrow capability-title">
+                    {capability.title}
+                  </div>
+                  <div>{capability.description}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="about shell" id="about">
+          <div className="about-grid">
+            <h2>The Builder Behind the Code.</h2>
+            <div className="about-copy">
+              <p className="body-large">
+                I approach software development as a craft. Every line of code
+                should serve a distinct purpose, eliminating redundancy and
+                focusing on scalable performance. My background blends deep
+                technical expertise with a keen eye for minimalist design,
+                ensuring that what I build not only functions flawlessly but
+                feels inherently premium.
+              </p>
+              <a className="text-link" href="#">
+                More About Me <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="contact shell" id="contact">
+          <h2>Let&apos;s build something precise.</h2>
+          <div className="contact-links">
+            <a href="#">Email</a>
+            <a href="#">LinkedIn</a>
+            <a href="#github">GitHub</a>
+            <a href="#">Resume</a>
+          </div>
+        </section>
       </main>
-    </div>
+      <Footer />
+      <FloatingAssistant />
+    </>
   );
 }
