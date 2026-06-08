@@ -7,24 +7,29 @@ import { Services } from "@/components/services";
 
 const capabilities = [
   {
-    title: "Frontend Engineering",
+    title: "Frontend Development",
     description:
-      "React, Next.js, TypeScript, Tailwind CSS, WebGL/Three.js integrations, Framer Motion.",
+      "React, Next.js, TypeScript, Tailwind CSS, responsive design.",
   },
   {
-    title: "Backend Systems",
+    title: "Backend Development",
     description:
-      "Python, Node.js, PostgreSQL, Redis, RESTful API Design, GraphQL.",
+      "Supabase, PostgreSQL, REST APIs, authentication, file storage.",
   },
   {
-    title: "Infrastructure & DevOps",
+    title: "Python Automation",
     description:
-      "AWS, Vercel, Docker, CI/CD Pipelines, Infrastructure as Code.",
+      "Automation scripts, file processing, transcription, document processing.",
   },
   {
-    title: "Design Systems",
+    title: "Web Application Features",
     description:
-      "Figma, Component Architecture, Accessibility Standards, Micro-interactions.",
+      "Forms, dashboards, user accounts, uploads, search, filters, admin panels.",
+  },
+  {
+    title: "Deployment",
+    description:
+      "Vercel, GitHub, custom domains, production deployment.",
   },
 ];
 
@@ -103,7 +108,7 @@ export default function Home() {
         <section className="section shell">
           <div className="capabilities-grid">
             <div>
-              <h2 className="section-heading sticky-heading">Capabilities</h2>
+              <h2 className="section-heading sticky-heading">Tools &amp; Systems</h2>
             </div>
             <div className="capability-list">
               {capabilities.map((capability) => (
