@@ -41,7 +41,6 @@ export default function Home() {
         <section className="hero shell">
           <div className="hero-grid">
             <div className="hero-copy">
-              <span className="eyebrow">WEB DEVELOPER</span>
               <h1>
                 Shape the idea until
                 <br />
@@ -52,12 +51,12 @@ export default function Home() {
                 <p>Make the first look unforgettable.</p>
                 <p>Great work feels obvious when it arrives.</p>
               </div>
-              <div className="button-row">
-                <a className="button button-primary" href="#work">
-                  VIEW WORK
-                </a>
-                <a className="button button-secondary" href="#contact">
-                  START A CONVERSATION
+              <div className="hero-action">
+                <a href="#contact">
+                  <span>START A CONVERSATION</span>
+                  <span className="hero-action-arrow" aria-hidden="true">
+                    &rarr;
+                  </span>
                 </a>
               </div>
             </div>

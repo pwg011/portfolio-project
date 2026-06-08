@@ -204,10 +204,6 @@ button {
   color: #7a7a72;
 }
 
-.hero-copy > .eyebrow {
-  margin-bottom: 16px;
-}
-
 h1,
 .contact h2 {
   margin: 0;
@@ -238,11 +234,11 @@ h1 {
   margin-top: 48px;
   margin-left: 0;
   padding-left: 24px;
-  border-left: 1px solid rgb(23 23 23 / 18%);
-  color: #343430;
-  font-size: 19px;
+  border-left: 1px solid rgb(23 23 23 / 12%);
+  color: #62625c;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.8;
   letter-spacing: -0.01em;
 }
 
@@ -256,10 +252,43 @@ h1 {
   gap: 16px;
 }
 
-.hero-copy .button-row {
-  gap: 20px;
+.hero-action {
   margin-top: 32px;
-  margin-left: 0;
+  margin-left: 25px;
+}
+
+.hero-action a {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #4f4f4a;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-action a > span:first-child {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0 1px;
+  transition: background-size 300ms ease;
+}
+
+.hero-action-arrow {
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 300ms ease;
+}
+
+.hero-action a:hover > span:first-child {
+  background-size: 100% 1px;
+}
+
+.hero-action a:hover .hero-action-arrow {
+  transform: translateX(4px);
 }
 
 .button {
@@ -811,13 +840,13 @@ h1 {
     margin-top: 40px;
     margin-left: 0;
     padding-left: 18px;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.75;
   }
 
-  .hero-copy .button-row {
-    margin-top: 32px;
-    margin-left: 0;
+  .hero-action {
+    margin-top: 28px;
+    margin-left: 19px;
   }
 
   .hero-media {
