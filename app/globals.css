@@ -300,7 +300,10 @@ h1 {
   object-fit: cover;
   filter: grayscale(1);
   opacity: 0.6;
-  transition: filter 700ms, opacity 700ms, transform 1s;
+  transition:
+    filter 700ms,
+    opacity 700ms,
+    transform 1s;
 }
 
 .hero-media:hover img {
@@ -421,9 +424,7 @@ h1 {
 }
 
 .services-section {
-  padding-block: 128px;
-  background: #000000;
-  color: var(--on-surface);
+  padding-block: 96px;
 }
 
 .services-inner {
@@ -432,8 +433,8 @@ h1 {
   gap: 24px;
 }
 
-.services-content {
-  grid-column: 5 / -1;
+.services-heading {
+  grid-column: span 4;
 }
 
 .services-label,
@@ -446,79 +447,78 @@ h1 {
 }
 
 .services-label {
+  display: flex;
+  gap: 16px;
+  align-items: center;
   margin: 0 0 48px;
-  color: #8e9192;
+  color: var(--secondary);
+}
+
+.services-label span {
+  width: 32px;
+  height: 1px;
+  background: var(--outline);
 }
 
 .services-list {
+  grid-column: span 8;
   display: grid;
   gap: 24px;
 }
 
-.service-card {
-  position: relative;
-  min-height: 176px;
-  overflow: hidden;
-  padding: 32px;
-  border: 1px solid rgb(255 255 255 / 6%);
-  border-radius: 4px;
-  background: #131313;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 3%);
-  transition: background-color 300ms, border-color 300ms;
+.service-row {
+  display: flex;
+  gap: 32px;
+  align-items: start;
+  padding: 40px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 8px;
+  background: rgb(32 31 31 / 60%);
+  backdrop-filter: blur(24px);
+  transition: border-color 500ms;
 }
 
-.service-card:hover {
-  border-color: rgb(255 255 255 / 10%);
-  background: #1c1b1b;
+.service-row:hover {
+  border-color: #e8b7a9;
 }
 
 .service-number {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  color: #8e9192;
+  flex: 0 0 auto;
+  color: #ffffff;
+  font-family: var(--font-display), serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0;
+  transition: color 500ms;
 }
 
-.service-card h3 {
-  max-width: calc(100% - 64px);
+.service-copy {
+  flex: 1;
+}
+
+.service-copy h3 {
   margin: 0 0 16px;
-  color: #f5f2ea;
+  color: #ffffff;
   font-family: var(--font-display), serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
+  transition: color 500ms;
 }
 
-.service-card p {
-  max-width: 680px;
-  margin: 0 0 32px;
-  color: #c4c7c8;
+.service-copy p {
+  margin: 0;
+  color: var(--on-surface);
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
+  transition: color 500ms;
 }
 
-.service-accent {
-  position: absolute;
-  right: 32px;
-  bottom: 24px;
-  left: 32px;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    rgb(255 73 142 / 55%),
-    rgb(255 119 183 / 18%) 52%,
-    transparent
-  );
-  opacity: 0.55;
-  transform: scaleX(0.72);
-  transform-origin: left;
-  transition: opacity 500ms, transform 500ms;
-}
-
-.service-card:hover .service-accent {
-  opacity: 1;
-  transform: scaleX(1);
+.service-row:hover .service-number,
+.service-row:hover .service-copy h3 {
+  color: #e8b7a9;
 }
 
 .capabilities-grid > div:first-child {
@@ -745,7 +745,8 @@ h1 {
   border: 1px solid rgb(255 255 255 / 20%);
   border-radius: 999px;
   background: var(--surface);
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%),
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 10%),
     0 25px 50px -12px rgb(0 0 0 / 65%);
   cursor: pointer;
   color: #f5f2ea;
@@ -834,50 +835,40 @@ h1 {
   }
 
   .services-section {
-    padding-block: 96px;
+    padding-block: 72px;
   }
 
   .services-inner {
     grid-template-columns: 1fr;
   }
 
-  .services-content {
+  .services-heading,
+  .services-list {
     grid-column: auto;
   }
 
   .services-label {
-    margin-bottom: 32px;
+    margin-bottom: 48px;
   }
 
   .services-list {
-    gap: 16px;
+    gap: 24px;
   }
 
-  .service-card {
-    min-height: 184px;
-    padding: 24px;
+  .service-row {
+    gap: 24px;
+    padding: 32px 24px;
   }
 
-  .service-number {
-    top: 24px;
-    right: 24px;
-  }
-
-  .service-card h3 {
+  .service-number,
+  .service-copy h3 {
     font-size: 26px;
     line-height: 34px;
   }
 
-  .service-card p {
-    margin-bottom: 28px;
+  .service-copy p {
     font-size: 15px;
     line-height: 24px;
-  }
-
-  .service-accent {
-    right: 24px;
-    bottom: 20px;
-    left: 24px;
   }
 
   .capability-row {
