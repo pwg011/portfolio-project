@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CopyEmailButton } from "@/components/copy-email-button";
 import { FloatingAssistant } from "@/components/floating-assistant";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -47,9 +48,9 @@ export default function Home() {
                 it feels inevitable.
               </h1>
               <div className="hero-principles">
-                <p>Presence is built in the details.</p>
-                <p>Make the first look unforgettable.</p>
-                <p>Great work feels obvious when it arrives.</p>
+                <p>Quality is built in the details.</p>
+                <p>The first impression should be unforgettable.</p>
+                <p>Designed to work beautifully.</p>
               </div>
               <div className="hero-action">
                 <a href="#contact">
@@ -123,31 +124,29 @@ export default function Home() {
         </section>
 
         <section className="about shell" id="about">
-          <div className="about-grid">
-            <h2>The Builder Behind the Code.</h2>
-            <div className="about-copy">
-              <p className="body-large">
-                I approach software development as a craft. Every line of code
-                should serve a distinct purpose, eliminating redundancy and
-                focusing on scalable performance. My background blends deep
-                technical expertise with a keen eye for minimalist design,
-                ensuring that what I build not only functions flawlessly but
-                feels inherently premium.
-              </p>
-              <a className="text-link" href="#">
-                More About Me <span aria-hidden="true">→</span>
-              </a>
+          <article className="work-note">
+            <p className="work-note-label">A Note on the Work</p>
+            <div className="work-note-message">
+              <p>Made for people who care how things look, feel, and function.</p>
+              <p>Build with care. Keep what matters.</p>
             </div>
-          </div>
+            <div className="work-note-signature" aria-label="Signed PWG">
+              <Image
+                src="/images/signature-pwg.png"
+                alt=""
+                width={575}
+                height={988}
+                sizes="(max-width: 767px) 96px, 132px"
+              />
+              <span>PWG</span>
+            </div>
+          </article>
         </section>
 
         <section className="contact shell" id="contact">
           <h2>Let&apos;s build something precise.</h2>
           <div className="contact-links">
-            <a href="#">Email</a>
-            <a href="#">LinkedIn</a>
-            <a href="#github">GitHub</a>
-            <a href="#">Resume</a>
+            <CopyEmailButton />
           </div>
         </section>
       </main>

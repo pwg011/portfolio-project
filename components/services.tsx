@@ -2,20 +2,18 @@ const services = [
   {
     number: "01",
     title: "PRODUCT DESIGN & BUILD",
-    description:
-      "Websites and web applications engineered with precision and editorial intent.",
+    description: "Websites and web applications.",
   },
   {
     number: "02",
     title: "PRODUCT REFINEMENT",
-    description:
-      "Cleaner pages, better flows, and highly refined user experiences for existing products.",
+    description: "Clean pages and premium user experiences.",
   },
   {
     number: "03",
     title: "WORKFLOW AUTOMATION",
     description:
-      "Custom tools, document processing, task automation, and practical AI feature implementation.",
+      "Custom tools, document processing, task automation, and AI-powered applications.",
   },
 ];
 
@@ -32,6 +30,12 @@ export function Services() {
             <span aria-hidden="true" />
             Services
           </h2>
+          <a className="services-cta" href="#contact">
+            <span>Request a Consultation</span>
+            <span className="services-cta-arrow" aria-hidden="true">
+              &rarr;
+            </span>
+          </a>
         </div>
         <div className="services-list">
           {services.map((service) => (

@@ -2,21 +2,18 @@ export function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#">
-        ALEX DOE
+        WEB DEVELOPER
       </a>
       <nav aria-label="Primary navigation">
         <ul className="nav-links">
           <li>
-            <a href="#work">Work</a>
+            <a href="#work">Projects</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
           </li>
           <li>
             <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <a href="#github">GitHub</a>
           </li>
         </ul>
       </nav>
