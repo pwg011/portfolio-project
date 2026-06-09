@@ -37,6 +37,23 @@ main {
   background: #f3f3f1;
 }
 
+.hero + #work,
+#work + .services-section {
+  margin-top: 381px;
+}
+
+.services-section + .section {
+  margin-top: 390px;
+}
+
+.section + .about {
+  margin-top: 403px;
+}
+
+.about + .contact {
+  margin-top: 429px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -790,6 +807,26 @@ h1 {
 @media (max-width: 767px) {
   :root {
     --page-padding: 24px;
+  }
+
+  .hero + #work {
+    margin-top: 255px;
+  }
+
+  #work + .services-section {
+    margin-top: 246px;
+  }
+
+  .services-section + .section {
+    margin-top: 255px;
+  }
+
+  .section + .about {
+    margin-top: 278px;
+  }
+
+  .about + .contact {
+    margin-top: 303px;
   }
 
   .site-header {
