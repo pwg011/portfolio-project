@@ -5,34 +5,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ProjectCard } from "@/components/project-card";
 import { Services } from "@/components/services";
-
-const capabilities = [
-  {
-    title: "Frontend Development",
-    description:
-      "React, Next.js, TypeScript, Tailwind CSS, responsive design.",
-  },
-  {
-    title: "Backend Development",
-    description:
-      "Supabase, PostgreSQL, REST APIs, authentication, file storage.",
-  },
-  {
-    title: "Python Automation",
-    description:
-      "Automation scripts, file processing, transcription, document processing.",
-  },
-  {
-    title: "Web Application Features",
-    description:
-      "Forms, dashboards, user accounts, uploads, search, filters, admin panels.",
-  },
-  {
-    title: "Deployment",
-    description:
-      "Vercel, GitHub, custom domains, production deployment.",
-  },
-];
+import { ToolsSystems } from "@/components/tools-systems";
 
 export default function Home() {
   return (
@@ -106,30 +79,20 @@ export default function Home() {
         <Services />
 
         <section className="section shell">
-          <div className="capabilities-grid">
-            <div>
-              <h2 className="section-heading sticky-heading">Tools &amp; Systems</h2>
-            </div>
-            <div className="capability-list">
-              {capabilities.map((capability) => (
-                <div className="capability-row" key={capability.title}>
-                  <div className="eyebrow capability-title">
-                    {capability.title}
-                  </div>
-                  <div>{capability.description}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ToolsSystems />
         </section>
 
         <section className="about shell" id="about">
           <article className="work-note">
             <p className="work-note-label">A Note on the Work</p>
-            <div className="work-note-message">
-              <p>Made for people who care how things look, feel, and function.</p>
-              <p>Build with care. Keep what matters.</p>
+            <div className="work-note-strip">
+              <p>
+                Made for people who care how things look, feel, and function.
+              </p>
             </div>
+            <p className="work-note-message">
+              Build with care. Keep what matters.
+            </p>
             <div className="work-note-signature" aria-label="Signed PWG">
               <Image
                 src="/images/signature-pwg.png"
