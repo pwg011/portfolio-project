@@ -1,25 +1,27 @@
+import Link from "next/link";
+
 export function Header() {
   return (
     <header className="site-header">
-      <a className="brand" href="#">
+      <Link className="brand" href="/">
         WEB DEVELOPER
-      </a>
+      </Link>
       <nav aria-label="Primary navigation">
         <ul className="nav-links">
           <li>
-            <a href="#work">Projects</a>
+            <Link href="/#work">Projects</Link>
           </li>
           <li>
-            <a href="#services">Services</a>
+            <Link href="/#services">Services</Link>
           </li>
           <li>
-            <a href="#about">About</a>
+            <Link href="/#about">About</Link>
           </li>
         </ul>
       </nav>
-      <a className="header-cta" href="#contact">
+      <Link className="header-cta" href="/#contact">
         Contact Me
-      </a>
+      </Link>
       <button className="mobile-menu" type="button" aria-label="Open menu">
         <span />
       </button>

@@ -6,11 +6,13 @@ import { Header } from "@/components/header";
 import { ProjectCard } from "@/components/project-card";
 import { Services } from "@/components/services";
 import { ToolsSystems } from "@/components/tools-systems";
+import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <div className="navbar-guard" aria-hidden="true" />
       <main>
         <section className="hero shell">
           <div className="hero-grid">
@@ -53,26 +55,18 @@ export default function Home() {
             Selected Work
           </h2>
           <div className="projects-grid">
-            <ProjectCard
-              className="project-featured"
-              image="/images/applyflow.jpg"
-              alt="ApplyFlow Case Study"
-              category="APPLICATION WORKFLOW"
-              title="Job Post Analyser + Application Manager"
-              showArrow
-            />
-            <ProjectCard
-              image="/images/transcription-tool.jpg"
-              alt="Video Transcription Tool"
-              category="SYSTEM AUTOMATION"
-              title="Video Transcription Workflow"
-            />
-            <ProjectCard
-              image="/images/portfolio-ui.jpg"
-              alt="Portfolio UI Build"
-              category="DOCUMENT GENERATION"
-              title="Resume Builder"
-            />
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                className={project.featured ? "project-featured" : undefined}
+                image={project.image}
+                alt={project.alt}
+                category={project.category}
+                title={project.title}
+                href={project.href}
+                showArrow
+              />
+            ))}
           </div>
         </section>
 
