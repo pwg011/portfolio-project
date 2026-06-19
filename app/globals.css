@@ -544,6 +544,31 @@ h1 {
   margin: 0;
 }
 
+.project-case-hero-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-case-hero-list li {
+  position: relative;
+  padding-left: 20px;
+  color: #62625c;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.project-case-hero-list li::before {
+  position: absolute;
+  top: 0.08em;
+  left: 0;
+  width: 10px;
+  color: rgb(23 23 23 / 62%);
+  content: "-";
+}
+
 .project-case-heading {
   padding-left: 24px;
   border-left: 1px solid rgb(23 23 23 / 12%);
@@ -567,6 +592,11 @@ h1 {
 .project-case-hero {
   padding-top: 48px;
   padding-bottom: 72px;
+}
+
+.project-detail-page[data-project="video-transcription"] .project-case-hero {
+  min-height: auto;
+  padding-bottom: 112px;
 }
 
 .project-case-copy {
@@ -605,6 +635,10 @@ h1 {
   gap: 24px;
   padding: 44px 0;
   border-top: 1px solid rgb(68 71 72 / 20%);
+}
+
+.project-detail-page[data-project="video-transcription"] .project-case-section:first-child {
+  padding-top: 44px;
 }
 
 .project-case-section:last-child {

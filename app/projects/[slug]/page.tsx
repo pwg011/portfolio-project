@@ -38,12 +38,14 @@ export default async function ProjectPage({
   const projectIndex = projects.findIndex((item) => item.slug === project.slug);
   const previousProject = projects[(projectIndex - 1 + projects.length) % projects.length];
   const nextProject = projects[(projectIndex + 1) % projects.length];
+  const previousProjectTitle = previousProject.navTitle ?? previousProject.title;
+  const nextProjectTitle = nextProject.navTitle ?? nextProject.title;
 
   return (
     <>
       <Header />
       <div className="navbar-guard" aria-hidden="true" />
-      <main className="project-detail-page">
+      <main className="project-detail-page" data-project={project.slug}>
         <section className="hero shell project-case-hero">
           <div className="hero-grid">
             <div className="hero-copy project-case-copy">
@@ -62,6 +64,13 @@ export default async function ProjectPage({
                       {paragraph}
                     </p>
                   ))}
+                  {project.heroBenefits ? (
+                    <ul className="project-case-hero-list">
+                      {project.heroBenefits.map((benefit) => (
+                        <li key={benefit}>{benefit}</li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -78,9 +87,9 @@ export default async function ProjectPage({
               </div>
               <div className="hero-action project-case-image-action">
                 <Link href={nextProject.href}>
-                  <span>Next project: {nextProject.title}</span>
+                  <span>Next project: {nextProjectTitle}</span>
                   <span className="hero-action-arrow" aria-hidden="true">
-                    →
+                    &rarr;
                   </span>
                 </Link>
               </div>
@@ -132,24 +141,24 @@ export default async function ProjectPage({
           <div className="hero-action hero-action-backward">
             <Link href={previousProject.href}>
               <span className="hero-action-arrow" aria-hidden="true">
-                ←
+                &larr;
               </span>
-              <span className="hero-action-label">Previous project: {previousProject.title}</span>
+              <span className="hero-action-label">Previous project: {previousProjectTitle}</span>
             </Link>
           </div>
           <div className="hero-action hero-action-backward">
             <Link href="/">
               <span className="hero-action-arrow" aria-hidden="true">
-                ←
+                &larr;
               </span>
               <span className="hero-action-label">Back to home</span>
             </Link>
           </div>
           <div className="hero-action">
             <Link href={nextProject.href}>
-              <span>Next project: {nextProject.title}</span>
+              <span>Next project: {nextProjectTitle}</span>
               <span className="hero-action-arrow" aria-hidden="true">
-                →
+                &rarr;
               </span>
             </Link>
           </div>

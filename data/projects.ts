@@ -5,7 +5,9 @@ export type Project = {
   alt: string;
   category: string;
   title: string;
+  navTitle?: string;
   overview?: string[];
+  heroBenefits?: string[];
   sections?: ProjectSection[];
   featured?: boolean;
 };
@@ -31,6 +33,7 @@ export const projects: Project[] = [
     alt: "ApplyFlow Case Study",
     category: "APPLICATION WORKFLOW",
     title: "Job Post Analyser + Application Manager",
+    navTitle: "ApplyFlow",
     featured: true,
     overview: [
       "ApplyFlow is an application workflow product built to make job applications easier, clearer, and more organised.",
@@ -142,6 +145,93 @@ export const projects: Project[] = [
     alt: "Video Transcription Tool",
     category: "SYSTEM AUTOMATION",
     title: "Video Transcription Workflow",
+    overview: [
+      "I built a local Python transcription workflow for times when uploading client recordings to a third-party website is not ideal.",
+    ],
+    heroBenefits: [
+      "Processes recordings locally on the computer",
+      "Names transcripts automatically and saves them to the chosen folder",
+      "Uses open-source tools with no subscription fees, upload limits, or paid credits",
+    ],
+    sections: [
+      {
+        title: "Purpose",
+        content: [
+          "The aim was to create a simple transcription setup that could be used without depending on a paid online platform.",
+          "It keeps the whole process local, makes file handling easier, and gives more control over privacy, storage, and delivery.",
+        ],
+      },
+      {
+        title: "What was built",
+        content: [],
+        list: [
+          "Video and audio file input",
+          "Local Faster-Whisper transcription",
+          "Timestamped transcript output",
+          "Automatic file naming",
+          "Chosen output folder",
+          "Organised input and output folders",
+          "README and setup files",
+          "Sample transcript output",
+        ],
+      },
+      {
+        title: "Workflow",
+        content: [
+          "The user runs the Python script and selects a video or audio file.",
+          "The recording is processed locally with Faster-Whisper.",
+          "The finished transcript is automatically named and saved in the chosen output folder, ready for review, editing, or delivery.",
+        ],
+      },
+      {
+        title: "Tools",
+        content: ["Python, Faster-Whisper, command line, local file handling."],
+      },
+      {
+        title: "Outcome",
+        content: [
+          "A free, local transcription workflow that avoids subscriptions, upload limits, and paid credits.",
+          "It gives the user more control over private recordings, file storage, naming, and where each transcript is saved.",
+        ],
+      },
+      {
+        title: "Walkthrough",
+        content: [],
+        walkthrough: [
+          {
+            number: "01",
+            title: "Choose the file",
+            description: "Select the video or audio recording to be transcribed.",
+          },
+          {
+            number: "02",
+            title: "Start the script",
+            description: "Run the Python command and enter the file path.",
+          },
+          {
+            number: "03",
+            title: "Process the recording",
+            description: "Faster-Whisper handles the transcription locally.",
+          },
+          {
+            number: "04",
+            title: "Create the transcript",
+            description: "The workflow produces timestamped text from the recording.",
+          },
+          {
+            number: "05",
+            title: "Save automatically",
+            description: "The transcript is named and saved in the chosen output folder.",
+          },
+          {
+            number: "06",
+            title: "Review the result",
+            description:
+              "Open the transcript, clean the text if needed, and prepare it for delivery.",
+          },
+        ],
+      },
+    ],
   },
   {
     slug: "resume-builder",
