@@ -23,13 +23,15 @@ export type ProjectWalkthroughItem = {
   number: string;
   title: string;
   description: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "applyflow",
     href: "/projects/applyflow",
-    image: "/images/applyflow.jpg",
+    image: "/images/applyflow/01-jobs-dashboard.png",
     alt: "ApplyFlow Case Study",
     category: "APPLICATION WORKFLOW",
     title: "Job Post Analyser + Application Manager",
@@ -104,35 +106,47 @@ export const projects: Project[] = [
             number: "01",
             title: "Save the job",
             description: "Add the job post so everything starts from one place.",
+            image: "/images/applyflow/03-import-preview-modal.png",
+            imageAlt: "ApplyFlow import preview modal screenshot.",
           },
           {
             number: "02",
             title: "Read the role clearly",
             description:
               "See the main requirements, skills, and keywords without digging through the whole post again.",
+            image: "/images/applyflow/05-application-details-drawer.png",
+            imageAlt: "ApplyFlow application details drawer screenshot.",
           },
           {
             number: "03",
             title: "Check the CV",
             description: "Review what already fits and what may need to be improved.",
+            image: "/images/applyflow/11-cv-review-modal.png",
+            imageAlt: "ApplyFlow CV review modal screenshot.",
           },
           {
             number: "04",
             title: "Build the application",
             description:
               "Use the role details to prepare a stronger resume or application draft.",
+            image: "/images/applyflow/07-profiles-dashboard.png",
+            imageAlt: "ApplyFlow profiles dashboard screenshot.",
           },
           {
             number: "05",
             title: "Keep track",
             description:
               "Save the status, notes, and next steps so the application does not get lost.",
+            image: "/images/applyflow/01-jobs-dashboard.png",
+            imageAlt: "ApplyFlow jobs dashboard screenshot.",
           },
           {
             number: "06",
             title: "Make changes easily",
             description:
               "Edit details, confirm actions, or return later without starting over.",
+            image: "/images/applyflow/04-edit-application-drawer.png",
+            imageAlt: "ApplyFlow edit application drawer screenshot.",
           },
         ],
       },
@@ -236,10 +250,107 @@ export const projects: Project[] = [
   {
     slug: "resume-builder",
     href: "/projects/resume-builder",
-    image: "/images/portfolio-ui.jpg",
+    image: "/images/resume-builder/18-resume-builder-full-page.png",
     alt: "Portfolio UI Build",
     category: "DOCUMENT GENERATION",
     title: "Resume Builder",
+    overview: [
+      "I built this to make resume editing simple and organised.",
+      "Instead of jumping between a CV, a job post, notes, and a blank document, the workflow brings the main pieces into one place.",
+    ],
+    heroBenefits: [
+      "Brings CV, profile, and job information together",
+      "Shows the resume in a clear document preview",
+      "Helps the user review, improve, and prepare it for export",
+    ],
+    sections: [
+      {
+        title: "Purpose",
+        content: [
+          "Resume editing often means working across several documents at once.",
+          "The Resume Builder keeps the source CV, job details, writing suggestions, and document preview together so the user can make changes without losing track of the full document.",
+        ],
+      },
+      {
+        title: "What was built",
+        content: [],
+        list: [
+          "CV and profile information",
+          "Job-focused resume direction",
+          "A4-style resume preview",
+          "Suggestions for stronger content",
+          "Organised sections for review",
+          "Document settings",
+          "Export-ready document flow",
+        ],
+      },
+      {
+        title: "Workflow",
+        content: [
+          "The user starts with their CV and profile information.",
+          "They can add the role they are applying for, review suggestions, and update the resume while seeing the document take shape in a realistic page preview.",
+          "The finished version can then be reviewed and prepared for export.",
+        ],
+      },
+      {
+        title: "Tools",
+        content: ["React, Next.js, TypeScript, document layout, UI workflow design."],
+      },
+      {
+        title: "Outcome",
+        content: [
+          "A clearer way to prepare tailored resumes without starting from scratch each time.",
+        ],
+      },
+      {
+        title: "Walkthrough",
+        content: [],
+        walkthrough: [
+          {
+            number: "01",
+            title: "Add the CV",
+            description: "Bring the existing CV and profile information into the builder.",
+            image: "/images/resume-builder/20-resume-builder-source-target-panels.png",
+            imageAlt: "Resume Builder source and target panels screenshot.",
+          },
+          {
+            number: "02",
+            title: "Add the job",
+            description: "Use the role details to guide the resume.",
+            image: "/images/resume-builder/20-resume-builder-source-target-panels.png",
+            imageAlt: "Resume Builder source and target panels screenshot.",
+          },
+          {
+            number: "03",
+            title: "Review the suggestions",
+            description: "See which parts of the resume may need more attention.",
+            image: "/images/resume-builder/21-resume-builder-ai-suggestions-analysis.png",
+            imageAlt: "Resume Builder AI suggestions analysis screenshot.",
+          },
+          {
+            number: "04",
+            title: "Edit the content",
+            description: "Update the summary, skills, experience, and education sections.",
+            image: "/images/resume-builder/19-resume-builder-a4-preview.png",
+            imageAlt: "Resume Builder A4 preview screenshot.",
+          },
+          {
+            number: "05",
+            title: "Check the document",
+            description: "Review the resume in a realistic A4 page layout.",
+            image: "/images/resume-builder/19-resume-builder-a4-preview.png",
+            imageAlt: "Resume Builder A4 preview screenshot.",
+          },
+          {
+            number: "06",
+            title: "Prepare the final version",
+            description: "Make the last changes and get the document ready for export.",
+            image: "/images/resume-builder/22-resume-builder-settings-export.png",
+            imageAlt: "Resume Builder settings and export screenshot.",
+          },
+        ],
+      },
+    ],
   },
 ];
 

@@ -612,6 +612,8 @@ h1 {
 
 .project-case-media {
   min-height: 440px;
+  background: #201f1f;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 8%);
 }
 
 .project-case-media-column {
@@ -619,6 +621,17 @@ h1 {
 }
 
 .project-case-media img {
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  opacity: 1;
+}
+
+.project-detail-page[data-project="applyflow"] .project-case-media img {
+  object-position: center;
+}
+
+.project-detail-page[data-project="resume-builder"] .project-case-media img {
   object-position: center;
 }
 
@@ -678,6 +691,10 @@ h1 {
   max-width: none;
 }
 
+.project-case-section:has(.project-walkthrough-row-with-image) .project-case-section-copy {
+  grid-column: 1 / -1;
+}
+
 .project-case-section p,
 .project-case-section ul {
   margin: 0;
@@ -734,6 +751,11 @@ h1 {
   min-width: 0;
 }
 
+.project-walkthrough-copy .project-walkthrough-number {
+  display: block;
+  margin-bottom: 16px;
+}
+
 .project-walkthrough-copy h3 {
   margin: 0;
   color: #171717;
@@ -777,6 +799,60 @@ h1 {
 
 .project-walkthrough-placeholder span:nth-child(3) {
   width: 64%;
+}
+
+.project-walkthrough-row-with-image {
+  grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+  gap: 56px;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.project-walkthrough-row-with-image .project-walkthrough-copy,
+.project-walkthrough-row-with-image .project-walkthrough-screenshot {
+  min-width: 0;
+}
+
+.project-walkthrough-row-with-image .project-walkthrough-copy {
+  grid-column: 1;
+}
+
+.project-walkthrough-row-with-image .project-walkthrough-screenshot {
+  grid-column: 2;
+}
+
+.project-walkthrough-row-with-image:nth-child(even) .project-walkthrough-copy {
+  grid-column: 2;
+}
+
+.project-walkthrough-row-with-image:nth-child(even) {
+  grid-template-columns: minmax(0, 0.66fr) minmax(0, 0.34fr);
+}
+
+.project-walkthrough-row-with-image:nth-child(even) .project-walkthrough-screenshot {
+  grid-column: 1;
+}
+
+.project-walkthrough-screenshot {
+  border-radius: 6px;
+  border: 1px solid rgb(68 71 72 / 18%);
+}
+
+.project-walkthrough-screenshot-compact {
+  justify-self: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.project-walkthrough-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+  opacity: 1;
 }
 
 .project-case-footer-nav .hero-action {
@@ -1368,8 +1444,9 @@ h1 {
 }
 
 .contact {
+  position: relative;
   padding-top: 160px;
-  padding-bottom: 160px;
+  padding-bottom: 32px;
   text-align: center;
 }
 
@@ -1379,8 +1456,9 @@ h1 {
 
 .contact-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 32px;
+  align-items: center;
   justify-content: center;
   color: #171717;
 }
@@ -1405,6 +1483,29 @@ h1 {
 .contact-email-button:focus-visible {
   outline: 2px solid #000000;
   outline-offset: 4px;
+}
+
+.contact-whatsapp-icon {
+  display: inline-flex;
+  width: 17px;
+  height: 17px;
+  color: #171717;
+}
+
+.contact-whatsapp-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.contact-signature {
+  margin: 26px 0 0;
+  color: rgb(23 23 23 / 56%);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.08em;
 }
 
 .site-footer {
@@ -1682,6 +1783,21 @@ h1 {
     grid-template-columns: 1fr;
     gap: 14px;
     padding: 28px 0;
+  }
+
+  .project-walkthrough-row-with-image {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 0;
+  }
+
+  .project-walkthrough-row-with-image:nth-child(even) .project-walkthrough-copy,
+  .project-walkthrough-row-with-image:nth-child(even) .project-walkthrough-screenshot {
+    grid-column: auto;
+  }
+
+  .project-walkthrough-screenshot {
+    width: 100%;
   }
 
   .project-walkthrough-placeholder {
