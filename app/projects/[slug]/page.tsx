@@ -37,6 +37,15 @@ const walkthroughImageSizes: Record<string, { width: number; height: number }> =
     width: 2708,
     height: 840,
   },
+  "/images/video-transcription/01-choose-file.png": { width: 1240, height: 820 },
+  "/images/video-transcription/02-start-script.png": { width: 1240, height: 520 },
+  "/images/video-transcription/03-process-recording.png": { width: 1343, height: 708 },
+  "/images/video-transcription/04-create-transcript.png": { width: 1343, height: 708 },
+  "/images/video-transcription/05-save-automatically.png": {
+    width: 1240,
+    height: 820,
+  },
+  "/images/video-transcription/06-review-result.png": { width: 1240, height: 860 },
 };
 
 const compactWalkthroughScreenshots = new Set([
