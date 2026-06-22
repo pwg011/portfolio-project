@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { FloatingAssistant } from "@/components/floating-assistant";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import type { ProjectSection } from "@/data/projects";
 import { getProject, projects } from "@/data/projects";
 
-const placeholderSections = [
+const placeholderSections: ProjectSection[] = [
   { title: "Overview", content: ["Content to be added."] },
   { title: "Purpose", content: ["Content to be added."] },
   { title: "What was built", content: ["Content to be added."] },

@@ -1,45 +1,24 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
 const EMAIL_ADDRESS = "gberevbiepeterwilliam@gmail.com";
-const RESET_DELAY = 2000;
+const EMAIL_SUBJECT = "Project or Enquiry";
+const EMAIL_BODY = `Hello Peter-William,
+
+I would like to speak with you about a potential project or opportunity.
+
+Best,`;
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL_ADDRESS}&su=${encodeURIComponent(
+  EMAIL_SUBJECT,
+)}&body=${encodeURIComponent(EMAIL_BODY)}`;
 
 export function CopyEmailButton() {
-  const [copied, setCopied] = useState(false);
-  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (resetTimerRef.current) {
-        clearTimeout(resetTimerRef.current);
-      }
-    };
-  }, []);
-
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText(EMAIL_ADDRESS);
-    setCopied(true);
-
-    if (resetTimerRef.current) {
-      clearTimeout(resetTimerRef.current);
-    }
-
-    resetTimerRef.current = setTimeout(() => {
-      setCopied(false);
-      resetTimerRef.current = null;
-    }, RESET_DELAY);
-  };
-
   return (
-    <button
+    <a
       className="contact-email-button"
-      type="button"
-      onClick={copyEmail}
-      aria-label={`Copy ${EMAIL_ADDRESS} to clipboard`}
-      aria-live="polite"
+      href={GMAIL_COMPOSE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Email Peter-William at ${EMAIL_ADDRESS}`}
     >
-      {copied ? "COPIED" : "EMAIL"}
-    </button>
+      EMAIL
+    </a>
   );
 }
