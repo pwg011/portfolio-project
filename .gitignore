@@ -47,3 +47,5 @@ node_modules
 .env
 .env.local
 .tmp-services-stitch/
+tmp/**
+tmp-*.png
