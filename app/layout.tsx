@@ -13,9 +13,16 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Doe | Digital Product Builder",
-  description:
-    "Digital product builder creating practical web applications, automation tools, and polished interfaces.",
+  title: "Peter-William | Web Developer",
+  description: "Websites, web applications, and automation.",
+  openGraph: {
+    title: "Peter-William | Web Developer",
+    description: "Websites, web applications, and automation.",
+  },
+  twitter: {
+    title: "Peter-William | Web Developer",
+    description: "Websites, web applications, and automation.",
+  },
 };
 
 export default function RootLayout({
